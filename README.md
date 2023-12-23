@@ -28,7 +28,7 @@ Done!
 
 ## Usage 🚀
 - Follow running_jules.txt for model configurations and execution.
-- More and detailed information about the model can be obtained at (https://jules-lsm.github.io)
+- More and detailed information about the model parameters can be obtained at (https://jules-lsm.github.io)
 
 ## Contributing
 
