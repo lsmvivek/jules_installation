@@ -1,12 +1,10 @@
-# jules_installation
+# JULES Installation, setup and run.
 Get started with JULES land surface energy balance model.
 # JULES Land Surface Model Installation
-
-Welcome to the JULES Land Surface Model installation repository! This repository contains documentation and scripts to facilitate the installation of JULES for research purposes.
+Welcome my reop! This repository contains documentation and scripts to facilitate the installation of JULES for research purposes.
 
 ## JULES Overview
-
-[JULES](https://jules.jchmr.org)(http://jules-lsm.github.io/) (Joint UK Land Environment Simulator) is a community land surface model designed for use in a range of applications, including climate and land-use research.
+[JULES](https://jules.jchmr.org)(http://jules-lsm.github.io/) (Joint UK Land Environment Simulator) is a community land surface model designed for use in a range of applications, including climate and land-use research and is actively used by UK-Met office for forecasting.
 
 ## Installation Guide
 
@@ -34,11 +32,9 @@ If you find any issues or have suggestions for improvements, feel free to [open 
 
 ## License
 
-[Specify the license under which you're releasing your documentation and scripts.]
-
 ## Acknowledgments
 
-I thank Clara (https://github.com/claragimenojesus) for assisting me with the setup of JULES. 
+I thank [Clara](https://github.com/claragimenojesus) and [Prof. Wouter Buytaert](https://github.com/ICHydro) for assisting me with the setup of JULES. 
 
 ## Contact
 
