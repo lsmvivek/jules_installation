@@ -1,0 +1,70 @@
+
+rosie copy u-da177
+% export NAMELIST=$HOME/roses/nlists_${RSUITE##*/}  % this folder has all the parameters
+
+1. Import the python JULES env
+conda activate jules
+
+2. Setup the path of the rose, jules and output dirs ( this is really not needed I guess )
+export JULES_ROOT=$HOME/MODELS/jules-vn6.1
+export RSUITE=$HOME/roses/u-da177
+export OUTPUT_DIR=$HOME/JULES_output/u-da177
+export OUTPUT_FOLDER=$HOME/JULES_output/u-da177
+
+3. Make your necessary changes 
+3a. Make changes to ~/roses/u-da177/rose-suite.conf
+	output folder
+	ancl data folder
+	input data folder
+	spinup period
+	spinup length
+3b. Make changes to ~/roses/u-da177/app/jules/rose-app.conf
+	spatial and temporal res.
+	parameters
+	
+4. Now run using rose
+	rose edit -C $RSUITE &
+	rose suite-run
+	cylc gscan &   %monitor using cylc GUI
+5. rosie go & for searching for suites
+	
+
+#Other ways to see if the suite is still running:
+cylc get-suite-contact u-da177
+cylc scan -n 'u-da177' caliber-02
+cylc ping -v --host=caliber-02 u-da177
+ps -opid,args 378401  # on caliber-02
+cylc kill u-da177
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+conda activate jules
+export JULES_ROOT=$HOME/MODELS/jules-vn6.1
+export RSUITE=$HOME/roses/u-da177
+
+
+export CYLC_SUITE_RUN_DIR=/storage/vivek/cylc-run
+export OUTPUT_DIR=/sftorage/vfivek/JULES_output/u-da177
+export PATH=$HOME/MODELS/jules-vn6.1/build/bin:$PATH
+export OUTPUT_FOLDER=/sftorage/vfivek/JULES_output/u-da177
+
+export JULES_PLATFORM=custom
+export JULES_REMOTE=local
+export JULES_COMPILER=gfortran
+export JULES_BUILD=normal
+export JULES_OMP=noomp
+export JULES_MPI=mpi
+export JULES_NETCDF=netcdf
+export JULES_NETCDF_PATH=/home/caliber/netcdf_par2/netcdf-c-4.6.3
+export JULES_NETCDF_INC_PATH=/home/caliber/netcdf_par2/netcdf-c-4.6.3/include
+export JULES_NETCDF_LIB_PATH=/home/caliber/netcdf_par2/netcdf-c-4.6.3/lib
+#export JULES_NETCDF_PATH=/usr
+#export JULES_NETCDF_INC_PATH=$JULES_NETCDF_PATH/include
+#export JULES_NETCDF_LIB_PATH=$JULES_NETCDF_PATH/lib
+export JULES_FFLAGS_EXTRA="-fallow-argument-mismatch"
+export JULES_LDFLAGS_EXTRA=""
+export export NAMELIST=$HOME/roses/nlists_${RSUITE##*/}
+fcm make -j 8 -f etc/fcm-make/make.cfg --new
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+mpirun -n 24 $JULES_ROOT/build/bin/jules.exe $NAMELIST
+
+du -hskh * | sort -n
+
