@@ -1,7 +1,7 @@
 # JULES Installation, setup and run 🛠️🌏💨
-Welcome to my reop! 
-Get started with JULES land surface energy balance model.
-This repository contains documentation and scripts to facilitate the installation of JULES for research purposes.
+Welcome to my reop! \
+Get started with JULES land surface energy balance model.\
+This repository contains documentation and scripts to facilitate the installation of JULES for research purposes. \
 I learnt JULES on my visit to Department of Civil and Environmental Engineering, Imperial College London, Sept-Nov 2023.
 
 ## JULES Overview
