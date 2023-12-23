@@ -23,7 +23,7 @@ Joint UK Land Environment Simulator is a community land surface model designed f
 
 ### Installation Steps 🐾
 1. Run or follow bash_script_zlib-hdf5-netcdf-C-F.sh, this will install all the prerequisites
-2. Now follow setting_up_jules.sh
+2. Now follow setting_up_jules.sh \
 Done!
 
 ## Usage 🚀
